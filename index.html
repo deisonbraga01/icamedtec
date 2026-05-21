@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>ICA Telemedicina Humana</title>
+
+    <meta
+      name="description"
+      content="Plataforma de telemedicina Humano para consultas, agendamentos e atendimento online."
+    />
+
+    <meta name="theme-color" content="#1e9b92" />
+    <meta name="application-name" content="ICA Med Tec" />
+
+    <!-- PWA -->
+    <base href="/app/" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="./imgs/icon-192.png" />
+    <link rel="apple-touch-icon" href="./imgs/apple-touch-icon.png" />
+
+    <!-- SEU CSS ORIGINAL -->
+    <link rel="stylesheet" href="./assets/app.css" />
+
+    <style>
+      .features-section {
+        margin-top: 20px;
+        padding: 16px;
+        border-radius: 1rem;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(30, 155, 146, 0.2);
+      }
+
+      .feature-item {
+        margin-bottom: 12px;
+      }
+
+      .feature-item h4 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .feature-item p {
+        margin: 2px 0 8px;
+        font-size: 13px;
+        opacity: 0.8;
+      }
+
+      .about-section {
+        margin-top: 20px;
+        padding: 16px;
+        border-radius: 1rem;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      html, body {
+  margin: 0;
+  padding: 0;
+  height: 115%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #103f44 0, #0a2529 45%, #061519 100%);
+  color: var(--color-text);
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="app-root">
+
+      <!-- HEADER ORIGINAL -->
+      <header class="app-header">
+        <div class="app-header-brand">
+          <img
+            class="app-logo"
+            src="https://icamedtec.com.br/wp-content/uploads/2025/12/logo-tec3-300x218.png"
+            alt="ICA Med Tec"
+          />
+          <div class="app-header-text">
+            <span class="app-title">Acesso à Clínica</span>
+            <span class="app-subtitle">Telemedicina Humana</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+
+        <!-- HERO ORIGINAL (MANTIDO) -->
+        <section class="hero-card">
+          <div class="hero-copy">
+            <h1>Consultas online</h1>
+            <p>
+              Plataforma digital para atendimento humano remoto, agendamentos e acompanhamento de consultas.
+            </p>
+          </div>
+        </section>
+
+        <!-- NOVA SEÇÃO (IMPORTANTE PARA APROVAÇÃO) -->
+        <section class="features-section">
+          <h3>O que você pode fazer</h3>
+
+          <div class="feature-item">
+            <h4>📅 Agendar consultas</h4>
+            <p>Marque atendimentos humano de forma rápida e prática.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>💬 Atendimento online</h4>
+            <p>Converse com profissionais sem sair de casa.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>📄 Histórico de consultas</h4>
+            <p>Acompanhe registros e orientações anteriores.</p>
+          </div>
+        </section>
+
+        <!-- LOGIN ORIGINAL (MANTIDO) -->
+        <section class="card login-card" aria-labelledby="login-title">
+          <h2 id="login-title">Entrar com CPF</h2>
+
+          <form id="login-form" class="login-form" novalidate>
+            <label for="cpf-input" class="field-label">CPF do paciente</label>
+
+            <div class="field-group">
+              <input
+                id="cpf-input"
+                name="cpf"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="000.000.000-00"
+                maxlength="14"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="login-button">
+              Acessar Clínica
+            </button>
+
+            <p class="helper-text">
+              Enviaremos um link de acesso seguro, sem necessidade de senha.
+            </p>
+          </form>
+
+          <div
+            id="login-status"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </section>
+
+        <!-- NOVA SEÇÃO (EXPLICAÇÃO DO APP) -->
+        <section class="about-section">
+          <h3>Sobre o aplicativo</h3>
+          <p>
+            O ICA Telemedicina Humana conecta pacientes a profissionais de saúde de forma rápida e segura.
+          </p>
+          <p>
+            Aplicativo exclusivo para clientes e parceiros da ICA Med Tec.
+          </p>
+        </section>
+
+        <!-- INFO ORIGINAL -->
+        <section class="info-section">
+          <h3>Atendimento seguro e integrado</h3>
+          <p>
+            Sua jornada digital foi desenhada para ser simples, prática e com a
+            segurança de um parceiro institucional.
+          </p>
+        </section>
+
+      </main>
+
+      <!-- FOOTER ORIGINAL -->
+      <footer class="app-footer">
+        <div class="footer-inner">
+          <button
+            class="footer-cta footer-cta-secondary"
+            type="button"
+            onclick="window.open('https://icamedtec.com.br/setor-publico/', '_blank')"
+          >
+            Setor Público
+          </button>
+    <button
+            class="footer-cta footer-cta-secondary"
+            type="button"
+            onclick="window.open('https://icamedtec.com.br/setor-corporativo/', '_blank')"
+          >
+            Setor Corporativo
+          </button>
+          <button
+            class="footer-cta footer-cta-primary"
+            type="button"
+            onclick="window.open('https://icamedtec.com.br/planos', '_blank')"
+          >
+            Pessoa Física
+          </button>
+        </div>
+
+        <div class="footer-meta">
+          <a class="footer-link" href="./privacy.html">Política de Privacidade</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- JS ORIGINAL -->
+    <script src="./assets/app.js?v=4"></script>
+  </body>
+</html>

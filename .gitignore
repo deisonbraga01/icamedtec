@@ -25,3 +25,7 @@ node_modules/
 
 # Logs
 *.log
+
+# Arquivos de deploy local
+*.zip
+*.tar.gz
