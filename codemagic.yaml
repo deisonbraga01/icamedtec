@@ -44,7 +44,8 @@ workflows:
           IOS_BUILD_NUMBER="$(date +%s)"
           echo "Using iOS build number: ${IOS_BUILD_NUMBER}"
           cd src
-          agvtool -project "ICA Med Tec.xcodeproj" new-version -all "${IOS_BUILD_NUMBER}"
+          agvtool new-version -all "${IOS_BUILD_NUMBER}"
+          agvtool what-version -terse
 
       - name: Fetch signing files from App Store Connect
         script: xcode-project use-profiles
