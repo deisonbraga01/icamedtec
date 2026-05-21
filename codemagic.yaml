@@ -25,7 +25,7 @@ workflows:
       vars:
         XCODE_WORKSPACE: "src/ICA Med Tec.xcworkspace"
         XCODE_SCHEME: "ICA Med Tec"
-        BUNDLE_ID: "br.com.icamedtec"
+        BUNDLE_ID: "br.com.icamedtec.telemedicinahumana"
 
     scripts:
       - name: Install CocoaPods dependencies

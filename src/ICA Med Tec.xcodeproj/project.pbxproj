@@ -382,7 +382,7 @@
 				);
 				MARKETING_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.icamedtec";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.icamedtec.telemedicinahumana";
 				PRODUCT_NAME = "ICAMedTec";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = YES;
@@ -410,7 +410,7 @@
 				);
 				MARKETING_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.icamedtec";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.icamedtec.telemedicinahumana";
 				PRODUCT_NAME = "ICAMedTec";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
