@@ -31,14 +31,20 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd src
-          pod install
+          pod install --repo-update
+
+      - name: Verify workspace and Pods
+        script: |
+          test -f "src/ICA Med Tec.xcworkspace/contents.xcworkspacedata"
+          test -d "src/Pods"
+          ls -la "src/ICA Med Tec.xcworkspace"
 
       - name: Set unique iOS build number
         script: |
           IOS_BUILD_NUMBER="$(date +%s)"
           echo "Using iOS build number: ${IOS_BUILD_NUMBER}"
-          cd "src"
-          agvtool new-version -all "${IOS_BUILD_NUMBER}"
+          cd src
+          agvtool -project "ICA Med Tec.xcodeproj" new-version -all "${IOS_BUILD_NUMBER}"
 
       - name: Fetch signing files from App Store Connect
         script: xcode-project use-profiles
@@ -46,7 +52,7 @@ workflows:
       - name: Build iOS IPA
         script: |
           xcode-project build-ipa \
-            --project "$XCODE_WORKSPACE" \
+            --workspace "$XCODE_WORKSPACE" \
             --scheme "$XCODE_SCHEME"
 
     artifacts:
