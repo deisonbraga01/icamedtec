@@ -51,9 +51,17 @@ workflows:
 
       - name: Build iOS IPA
         script: |
+          set -e
+          WORKSPACE_PATH="${CM_BUILD_DIR}/src/ICA Med Tec.xcworkspace"
+          SCHEME_NAME="ICA Med Tec"
+          echo "CM_BUILD_DIR=${CM_BUILD_DIR}"
+          echo "WORKSPACE_PATH=${WORKSPACE_PATH}"
+          ls -la "${WORKSPACE_PATH}" || ls -la "src/"
+          xcodebuild -workspace "${WORKSPACE_PATH}" -scheme "${SCHEME_NAME}" -showBuildSettings -configuration Release | head -30
           xcode-project build-ipa \
-            --workspace "$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME"
+            --workspace "${WORKSPACE_PATH}" \
+            --scheme "${SCHEME_NAME}" \
+            --config Release
 
     artifacts:
       - build/ios/ipa/*.ipa
