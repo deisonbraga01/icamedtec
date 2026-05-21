@@ -62,7 +62,9 @@ workflows:
           xcode-project build-ipa \
             --workspace "${WORKSPACE_PATH}" \
             --scheme "${SCHEME_NAME}" \
-            --config Release
+            --config Release \
+            --archive-flags "-destination 'generic/platform=iOS'" \
+            --disable-xcpretty
 
     artifacts:
       - build/ios/ipa/*.ipa
