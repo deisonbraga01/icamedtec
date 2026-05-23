@@ -134,12 +134,21 @@ extension ViewController: WKUIDelegate, WKDownloadDelegate {
 
                 let matchingHostOrigin = allowedOrigins.first(where: { requestHost.range(of: $0) != nil })
                 if (matchingHostOrigin != nil) {
-                    // Open in main webview
-                    decisionHandler(.allow)
-                    if (!toolbarView.isHidden) {
-                        toolbarView.isHidden = true
-                        webView.frame = calcWebviewFrame(webviewView: webviewView, toolbarView: nil)
+                    let path = requestUrl.path
+                    let isTelemedicinaHost = requestHost.hasPrefix("telemedicina.")
+                    let isAppShellPath = path.hasPrefix("/app")
+
+                    if (isTelemedicinaHost || isAppShellPath) {
+                        decisionHandler(.allow)
+                        if (!toolbarView.isHidden) {
+                            toolbarView.isHidden = true
+                            webView.frame = calcWebviewFrame(webviewView: webviewView, toolbarView: nil)
+                        }
+                        return
                     }
+
+                    // Bloqueia vitrine/planos no shell do app (Guideline 3.1.1).
+                    decisionHandler(.cancel)
                     return
                 }
                 if (navigationAction.navigationType == .other &&

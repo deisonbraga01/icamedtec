@@ -1,4 +1,4 @@
-const CACHE_NAME = "ica-medtec-app-v4";
+const CACHE_NAME = "ica-medtec-app-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
